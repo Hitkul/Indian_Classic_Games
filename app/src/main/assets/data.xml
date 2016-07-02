@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<records>
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>Ankh Michauli</subsubclassification>
+		<image>ankh michauli_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>ankh_michauli_1</li>
+		</list>
+	</card>
+	<card>
+		<classification>Indoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>antakshri</subsubclassification>
+		<image>Antakshri_2</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>Antakshri_1</li>
+			<li>Antakshri_2</li>
+		</list>
+	</card>
+	<card>
+		<classification>Card Games</classification>
+		<subclassification></subclassification>
+		<subsubclassification>bluff</subsubclassification>
+		<image>bluff_2</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>bluff_1</li>
+			<li>bluff_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>chain chain</subsubclassification>
+		<image>chain chain_3</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>chain chain_1</li>
+			<li>chain chain_2</li>
+			<li>chain chain_3</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Indoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>chidiya udd</subsubclassification>
+		<image>chidiya udd_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>chidiya udd_1</li>
+			<li>chidiya udd_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>choo achoot ki bimari</subsubclassification>
+		<image>chua achoot ki bimari_2</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>chua achoot ki bimari_1</li>
+			<li>chua achoot ki bimari_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>chuha daud billi ayi</subsubclassification>
+		<image>chuha daud billi ayi_2</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>chuha daud billi ayi_1</li>
+			<li>chuha daud billi ayi_2</li>
+			<li>chuha daud billi ayi_3</li>
+			<li>chuha daud billi ayi_4</li>
+			<li>chuha daud billi ayi_5</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>chupan chupai</subsubclassification>
+		<image>chupan chupai_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>chupan chupai_1</li>
+			<li>chupan chupai_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Indoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>doctor doctor</subsubclassification>
+		<image>doctor doctor_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>doctor doctor_1</li>
+			<li>doctor doctor_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Card Games</classification>
+		<subclassification></subclassification>
+		<subsubclassification>donkey</subsubclassification>
+		<image>donkey_2</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>donkey_1</li>
+			<li>donkey_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>kabaddi</subsubclassification>
+		<image>kabaddi_2</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>kabaddi_1</li>
+			<li>kabaddi_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>kho kho</subsubclassification>
+		<image>kho kho_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>kho kho_1</li>
+			<li>kho kho_2</li>
+			<li>kho kho_3</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>kith kith</subsubclassification>
+		<image>kith kithstapu_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>kith kithstapu_1</li>
+			<li>kith kithstapu_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>maaram pitti</subsubclassification>
+		<image>maaram pitti_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>maaram pitti_1</li>
+			<li>maaram pitti_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>pakdam pakdai</subsubclassification>
+		<image>pakdam pakdai_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>pakdam pakdai_1</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Card Games</classification>
+		<subclassification></subclassification>
+		<subsubclassification>patte pe patta</subsubclassification>
+		<image>patte pe patta_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>patte pe patta_1</li>
+		</list>
+	</card>
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>pitthoo</subsubclassification>
+		<image>pitthoo_2</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>pitthoo_1</li>
+			<li>pitthoo_2</li>
+			<li>pitthoo_3</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>poshampa</subsubclassification>
+		<image>poshampa_3</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>poshampa_1</li>
+			<li>poshampa_2</li>
+			<li>poshampa_3</li>
+			<li>poshampa_4</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Indoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>raja mantri chor sipahi</subsubclassification>
+		<image>raja mantri chor sipahi_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>raja mantri chor sipahi_1</li>
+			<li>raja mantri chor sipahi_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Card Games</classification>
+		<subclassification></subclassification>
+		<subsubclassification>rummy</subsubclassification>
+		<image>rummy_2</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>rummy_1</li>
+			<li>rummy_2</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Indoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>saap sidhi</subsubclassification>
+		<image>saap sidhi_2</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>saap sidhi_1</li>
+			<li>saap sidhi_2</li>
+			<li>saap sidhi_3</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Card Games</classification>
+		<subclassification></subclassification>
+		<subsubclassification>teen do panch</subsubclassification>
+		<image>teen do panch_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>teen do panch_1</li>
+			<li>teen do panch_2</li>
+			<li>teen do panch_3</li>
+		</list>
+	</card>
+
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>unch neech ka papda</subsubclassification>
+		<image>unch neech ka papda_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>unch neech ka papda_1</li>
+			<li>unch neech ka papda_2</li>
+			<li>unch neech ka papda_3</li>
+		</list>
+	</card>
+	<card>
+		<classification>Outdoor</classification>
+		<subclassification></subclassification>
+		<subsubclassification>vish amrit</subsubclassification>
+		<image>vish amrit_1</image>
+		<title></title>
+		<text></text>
+		<list>
+			<li>vish amrit_1</li>
+			<li>vish amrit_2</li>
+		</list>
+	</card>
+</records>

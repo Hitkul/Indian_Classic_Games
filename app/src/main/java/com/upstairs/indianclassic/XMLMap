@@ -1,0 +1,8 @@
+This file only stores the Mapping of the XML Document
+Format
+Tag                 | Map                               |Semantic Meaning Optional
+------------------------------------------------------------------------------------
+Classification      |Game Categories                    |
+SubSubClassification|Game Name                          |
+Image               |Image Thumbnails                   |Displayed on App homescreen
+List                |Stores all the images, # Seperated |

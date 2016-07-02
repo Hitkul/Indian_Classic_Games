@@ -7,13 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 /**
  * Created by hitkul on 2/7/16.
  */
-public class list_adapter extends ArrayAdapter<String> {
+public class list_adapter extends ArrayAdapter<Card> {
 
     private Activity context;
 
@@ -29,13 +30,26 @@ public class list_adapter extends ArrayAdapter<String> {
         view = inflater.inflate(R.layout.card_layout, null, true);
 
         ImageView img = (ImageView) view.findViewById(R.id.img);
+        TextView name = (TextView) view.findViewById(R.id.name);
 
         Resources res = context.getResources();
-        String mDrawableName = getItem(position).replaceAll(" ", "_").toLowerCase();
+        String mDrawableName = getItem(position).getImage().replaceAll(" ", "_").toLowerCase();
         int resID = res.getIdentifier(mDrawableName, "drawable", context.getPackageName());
 
         Glide.with(context).load(resID).into(img);
 
+        name.setText(toTitleCase(getItem(position).getTitle()));
+
         return view;
+    }
+
+    private String toTitleCase(String foo) {
+        String [] arr = foo.split(" ");
+        StringBuffer sb = new StringBuffer();
+        for(int i=0;i<arr.length;i++){
+            sb.append(Character.toUpperCase(arr[i].charAt(0)))
+                    .append(arr[i].substring(1)).append(" ");
+        }
+        return sb.toString().trim();
     }
 }

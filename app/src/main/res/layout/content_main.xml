@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.upstairs.indianclassic.MainActivity"
+    tools:context=".Home_Activity"
     tools:showIn="@layout/app_bar_main">
 
     <com.nirhart.parallaxscroll.views.ParallaxListView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,7 +24,7 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="90dp"
         app:circular_parallax="true"
-        tools:context=".MainActivity"
+        tools:context=".Home_Activity"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 

@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -24,7 +25,7 @@ public class ScreenSliderLayoutActivity extends FragmentActivity {
      */
     List<String> durr;
     private List<ImageView> dots;
-
+    List<Integer> Resources = new ArrayList<Integer>();
 
 
 
@@ -46,7 +47,11 @@ public class ScreenSliderLayoutActivity extends FragmentActivity {
         Intent foo = getIntent();
 
         durr = new ArrayList<String>(Arrays.asList(foo.getStringExtra("images").split(",")));
-
+        for(int i=0;i<durr.size();i++) {
+            String t = durr.get(i).toLowerCase().replaceAll(" ", "_");
+            int ResId = getResources().getIdentifier(t, "drawable", getPackageName());
+            Resources.add(ResId);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewpagerlayout);
         dotsLayout = (LinearLayout)findViewById(R.id.dots);
@@ -100,10 +105,8 @@ public class ScreenSliderLayoutActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            int resId = getResources().getIdentifier(durr.get(position),"drawable",getPackageName());
-
             Bundle newbundle = new Bundle();
-            newbundle.putInt("position",resId);
+            newbundle.putInt("position",Resources.get(position));
             ScreenSlidePageFragment foo= new ScreenSlidePageFragment();
             foo.setArguments(newbundle);
             return foo;
