@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -48,9 +49,7 @@ public class Home_Activity extends AppCompatActivity
         cardList = getCardsFromDb();
         game_list = (ParallaxListView) findViewById(R.id.Home_cards_list);
         adapter = new list_adapter(Home_Activity.this);
-        adapter.addAll(cardList);
-        //adapter.addAll(game_name);
-        game_list.setAdapter(adapter);
+        setCards();
 
         game_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -60,6 +59,8 @@ public class Home_Activity extends AppCompatActivity
                 startActivity(newintent);
             }
         });
+
+
 
 
 
@@ -86,6 +87,38 @@ public class Home_Activity extends AppCompatActivity
         }
         db.close();
         return temp;
+    }
+
+
+    private List<Card> getCardsOfCategoryFromDb(String Category) {
+        List<Card> temp = new ArrayList<Card>();
+        CardDBHelper cdbhelper=new CardDBHelper(getApplicationContext());
+        SQLiteDatabase db = cdbhelper.getReadableDatabase();
+        String[] projection={
+                CardContract.CardTable.COLUMN_NAME_CLASSIFICATION,
+                CardContract.CardTable.COLUMN_NAME_SUBSUBCLASSIFICATION,
+                CardContract.CardTable.COLUMN_NAME_CARD_IMAGE,
+                CardContract.CardTable.COLUMN_NAME_CARD_LIST,
+        };
+        String sortOrder = CardContract.CardTable.COLUMN_NAME_SUBSUBCLASSIFICATION + " ASC";
+        String Selection = CardContract.CardTable.COLUMN_NAME_CLASSIFICATION + " = ? ";
+        String[] SelectionArgs = { Category
+        };
+        Cursor c = db.query(CardContract.CardTable.TABLE_NAME,projection,Selection,SelectionArgs,null,null,sortOrder);
+        if(c!=null){
+            for(c.moveToFirst();!c.isAfterLast();c.moveToNext()){
+                Card Temp = new Card(c);
+                temp.add(Temp);
+            }
+        }
+        db.close();
+        return temp;
+    }
+
+    private void setCards(){
+        adapter.clear();
+        adapter.addAll(cardList);
+        game_list.setAdapter(adapter);
     }
 
     @Override
@@ -129,12 +162,23 @@ public class Home_Activity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.outdoor) {
-            // Handle the camera action
+            cardList.clear();
+            cardList = getCardsOfCategoryFromDb("Outdoor");
+            setCards();
         } else if (id == R.id.indoor) {
+            cardList.clear();
+            cardList = getCardsOfCategoryFromDb("Indoor");
+            setCards();
 
         } else if (id == R.id.all) {
+            cardList.clear();
+            cardList = getCardsFromDb();
+            setCards();
 
         } else if (id == R.id.card) {
+            cardList.clear();
+            cardList = getCardsOfCategoryFromDb("Card Games");
+            setCards();
 
         } else if (id == R.id.nav_share) {
 
