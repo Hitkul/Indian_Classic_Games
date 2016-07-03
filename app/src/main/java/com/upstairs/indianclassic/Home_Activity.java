@@ -128,17 +128,22 @@ public class Home_Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.outdoor) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.indoor) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.all) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.card) {
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("text/plain");
+            i.putExtra(Intent.EXTRA_SUBJECT, "Dog Care");
+            String sAux = "https://play.google.com/store/apps/details?id=com.upstairs.indianclassic ";
+            i.putExtra(Intent.EXTRA_TEXT, sAux);
+            startActivity(Intent.createChooser(i, "Choose One"));
 
         }
 
