@@ -73,6 +73,15 @@ public class Home_Activity extends AppCompatActivity
             }
         });
 
+        assert searchButton!=null;
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toSearch = new Intent(Home_Activity.this, search.class);
+                startActivity(toSearch);
+                overridePendingTransition(R.anim.pull_in_right,R.anim.push_out_left);
+            }
+        });
 
 
 
