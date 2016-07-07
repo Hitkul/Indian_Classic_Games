@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textSize="20sp"
-        android:textColor="@color/back"
+        android:textColor="@color/black"
         android:text="Categories"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
     <View
