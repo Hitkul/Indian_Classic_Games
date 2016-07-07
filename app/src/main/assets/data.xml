@@ -9,6 +9,7 @@
 		<text></text>
 		<list>
 			<li>ankh_michauli_1</li>
+			<li>ankh_michauli_2</li>
 		</list>
 	</card>
 	<card>
@@ -21,6 +22,8 @@
 		<list>
 			<li>Antakshri_1</li>
 			<li>Antakshri_2</li>
+			<li>Antakshri_3</li>
+			<li>Antakshri_4</li>
 		</list>
 	</card>
 	<card>
@@ -33,6 +36,8 @@
 		<list>
 			<li>bluff_1</li>
 			<li>bluff_2</li>
+			<li>bluff_3</li>
+			<li>bluff_4</li>
 		</list>
 	</card>
 
@@ -60,6 +65,7 @@
 		<list>
 			<li>chidiya udd_1</li>
 			<li>chidiya udd_2</li>
+			<li>chidiya udd_3</li>
 		</list>
 	</card>
 
@@ -141,6 +147,7 @@
 		<list>
 			<li>kabaddi_1</li>
 			<li>kabaddi_2</li>
+			<li>kabaddi_3</li>
 		</list>
 	</card>
 
@@ -155,6 +162,8 @@
 			<li>kho kho_1</li>
 			<li>kho kho_2</li>
 			<li>kho kho_3</li>
+			<li>kho kho_4</li>
+			<li>kho kho_5</li>
 		</list>
 	</card>
 
@@ -168,6 +177,7 @@
 		<list>
 			<li>kith kithstapu_1</li>
 			<li>kith kithstapu_2</li>
+			<li>kith kithstapu_3</li>
 		</list>
 	</card>
 
@@ -218,6 +228,7 @@
 			<li>pitthoo_1</li>
 			<li>pitthoo_2</li>
 			<li>pitthoo_3</li>
+			<li>pitthoo_4</li>
 		</list>
 	</card>
 
@@ -246,6 +257,7 @@
 		<list>
 			<li>raja mantri chor sipahi_1</li>
 			<li>raja mantri chor sipahi_2</li>
+			<li>raja mantri chor sipahi_3</li>
 		</list>
 	</card>
 
@@ -273,20 +285,6 @@
 			<li>saap sidhi_1</li>
 			<li>saap sidhi_2</li>
 			<li>saap sidhi_3</li>
-		</list>
-	</card>
-
-	<card>
-		<classification>Card Games</classification>
-		<subclassification></subclassification>
-		<subsubclassification>teen do panch</subsubclassification>
-		<image>teen do panch_1</image>
-		<title></title>
-		<text></text>
-		<list>
-			<li>teen do panch_1</li>
-			<li>teen do panch_2</li>
-			<li>teen do panch_3</li>
 		</list>
 	</card>
 

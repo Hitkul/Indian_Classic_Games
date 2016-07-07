@@ -10,13 +10,13 @@
     card_view:cardElevation="11dp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:background="#FDF5E6"
+        android:layout_height="450dp"
+        android:background="@color/polaroide"
         >
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="310dp"
+            android:layout_height="360dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -34,9 +34,9 @@
             android:layout_width="wrap_content"
             android:id="@+id/name"
             android:layout_height="wrap_content"
-            android:text="BOOBS"
             android:layout_marginBottom="20dp"
             android:textSize="30sp"
+            android:textColor="@color/back"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"/>
 

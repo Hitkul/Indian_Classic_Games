@@ -1,8 +1,10 @@
 package com.upstairs.indianclassic;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +17,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.nirhart.parallaxscroll.views.ParallaxListView;
 
@@ -27,13 +31,18 @@ public class Home_Activity extends AppCompatActivity
     ParallaxListView game_list;
     list_adapter adapter;
     private List<Card> cardList;
+    TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
         setSupportActionBar(toolbar);
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -44,12 +53,16 @@ public class Home_Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        final String imageList = "first,second,third,fourth,fifth";
+
+        title = (TextView) findViewById(R.id.title);
+        ImageButton searchButton = (ImageButton) findViewById(R.id.searchButton);
 
         cardList = getCardsFromDb();
         game_list = (ParallaxListView) findViewById(R.id.Home_cards_list);
         adapter = new list_adapter(Home_Activity.this);
         setCards();
+
+        title.setText("All Games");
 
         game_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -140,27 +153,31 @@ public class Home_Activity extends AppCompatActivity
         if (id == R.id.outdoor) {
             cardList.clear();
             cardList = getCardsOfCategoryFromDb("Outdoor");
+            title.setText("Outdoor Games");
             setCards();
         } else if (id == R.id.indoor) {
             cardList.clear();
             cardList = getCardsOfCategoryFromDb("Indoor");
+            title.setText("Indoor Games");
             setCards();
 
         } else if (id == R.id.all) {
             cardList.clear();
             cardList = getCardsFromDb();
+            title.setText("All Games");
             setCards();
 
         } else if (id == R.id.card) {
             cardList.clear();
             cardList = getCardsOfCategoryFromDb("Card Games");
+            title.setText("Card Games");
             setCards();
 
         } else if (id == R.id.nav_share) {
 
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
-            i.putExtra(Intent.EXTRA_SUBJECT, "Dog Care");
+            i.putExtra(Intent.EXTRA_SUBJECT, "Classic Indian Games");
             String sAux = "https://play.google.com/store/apps/details?id=com.upstairs.indianclassic ";
             i.putExtra(Intent.EXTRA_TEXT, sAux);
             startActivity(Intent.createChooser(i, "Choose One"));
