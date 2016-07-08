@@ -5,12 +5,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
     XMLAssetHandler ParserTask;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Log.d("SKIPPING PARSE", String.valueOf(SharedPreferencesHelper.checkFlag(SharedPreferencesHelper.DB_READY_KEY,getApplicationContext())));
         if(SharedPreferencesHelper.checkFlag(SharedPreferencesHelper.DB_READY_KEY,getApplicationContext())) {//Data has been parsed
 
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
             ParserTask = new XMLAssetHandler(getApplicationContext(),MainActivity.this);
             ParserTask.execute();
         }
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_parser);
     }
 
