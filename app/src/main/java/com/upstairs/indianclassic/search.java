@@ -39,7 +39,7 @@ public class search extends AppCompatActivity {
         };
         String selection = CardContract.CardTable.COLUMN_NAME_SUBSUBCLASSIFICATION+" LIKE ?";
         String[] selectionArgs = {"%"+foo+"%"};
-        String sortOrder = CardContract.CardTable.COLUMN_NAME_SUBSUBCLASSIFICATION + " DESC";
+        String sortOrder = CardContract.CardTable.COLUMN_NAME_SUBSUBCLASSIFICATION + " ";
         Cursor c = db.query(true, CardContract.CardTable.TABLE_NAME,projection,selection,selectionArgs,null,null,sortOrder,null);
 
         if(c!=null){

@@ -12,14 +12,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link BlankFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link BlankFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 
 public class ScreenSlidePageFragment extends Fragment {
 

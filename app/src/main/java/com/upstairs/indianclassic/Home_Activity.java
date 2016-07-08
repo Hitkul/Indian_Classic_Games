@@ -2,10 +2,14 @@ package com.upstairs.indianclassic;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -26,11 +30,13 @@ import com.nirhart.parallaxscroll.views.ParallaxListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.castorflex.android.verticalviewpager.VerticalViewPager;
+
 public class Home_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ParallaxListView game_list;
-    list_adapter adapter;
+    VerticalViewPager verticalViewPager;
+
     private List<Card> cardList;
     TextView title;
 
@@ -58,21 +64,12 @@ public class Home_Activity extends AppCompatActivity
         ImageButton searchButton = (ImageButton) findViewById(R.id.searchButton);
 
         cardList = getCardsFromDb();
-        game_list = (ParallaxListView) findViewById(R.id.Home_cards_list);
-        adapter = new list_adapter(Home_Activity.this);
+
+        verticalViewPager = (VerticalViewPager) findViewById(R.id.verticalviewpager);
         setCards();
 
         title.setText("All Games");
 
-        game_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent newintent = new Intent(Home_Activity.this, ScreenSliderLayoutActivity.class);
-                newintent.putExtra("images", adapter.getItem(position).getList_string());
-                startActivity(newintent);
-            }
-        });
-        game_list.setFriction(0.6f);
 
         assert searchButton!=null;
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -84,8 +81,44 @@ public class Home_Activity extends AppCompatActivity
             }
         });
 
+    }
 
 
+    private class HomeScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+        public HomeScreenSlidePagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            Bundle newbundle = new Bundle();
+
+            Resources res = getResources();
+            String mDrawableName = cardList.get(position).getImage().replaceAll(" ", "_").toLowerCase();
+            int resID = res.getIdentifier(mDrawableName, "drawable", getPackageName());
+
+            newbundle.putInt("thumbnail",resID);
+            newbundle.putString("game_name",toTitleCase(cardList.get(position).getTitle()));
+            newbundle.putString("image_list",cardList.get(position).getList_string());
+
+            HomeScreenPageFragment foo= new HomeScreenPageFragment();
+            foo.setArguments(newbundle);
+            return foo;
+        }
+        @Override
+        public int getCount() {
+            return cardList.size();
+        }
+    }
+
+    private String toTitleCase(String foo) {
+        String [] arr = foo.split(" ");
+        StringBuffer sb = new StringBuffer();
+        for(int i=0;i<arr.length;i++){
+            sb.append(Character.toUpperCase(arr[i].charAt(0)))
+                    .append(arr[i].substring(1)).append(" ");
+        }
+        return sb.toString().trim();
     }
 
     private List<Card> getCardsFromDb() {
@@ -137,9 +170,11 @@ public class Home_Activity extends AppCompatActivity
     }
 
     private void setCards(){
-        adapter.clear();
-        adapter.addAll(cardList);
-        game_list.setAdapter(adapter);
+
+        HomeScreenSlidePagerAdapter mPagerAdapter = new HomeScreenSlidePagerAdapter(getSupportFragmentManager());
+        verticalViewPager.setOffscreenPageLimit(1);
+        verticalViewPager.setAdapter(mPagerAdapter);
+
     }
 
     @Override
