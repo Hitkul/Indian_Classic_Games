@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -53,7 +54,6 @@ public class Home_Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
         title = (TextView) findViewById(R.id.title);
         ImageButton searchButton = (ImageButton) findViewById(R.id.searchButton);
 
@@ -72,6 +72,7 @@ public class Home_Activity extends AppCompatActivity
                 startActivity(newintent);
             }
         });
+        game_list.setFriction(0.6f);
 
         assert searchButton!=null;
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -82,8 +83,6 @@ public class Home_Activity extends AppCompatActivity
                 overridePendingTransition(R.anim.pull_in_right,R.anim.push_out_left);
             }
         });
-
-
 
 
 

@@ -2,6 +2,7 @@ package com.upstairs.indianclassic;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,7 @@ public class list_adapter extends ArrayAdapter<Card> {
 
         LayoutInflater inflater = context.getLayoutInflater();
         view = inflater.inflate(R.layout.card_layout, null, true);
-
+        Typeface font_name = Typeface.createFromAsset(context.getAssets(), "PermanentMarker.ttf");
         ImageView img = (ImageView) view.findViewById(R.id.img);
         TextView name = (TextView) view.findViewById(R.id.name);
 
@@ -36,9 +37,10 @@ public class list_adapter extends ArrayAdapter<Card> {
         String mDrawableName = getItem(position).getImage().replaceAll(" ", "_").toLowerCase();
         int resID = res.getIdentifier(mDrawableName, "drawable", context.getPackageName());
 
-        Glide.with(context).load(resID).into(img);
+        Glide.with(context).load(resID).centerCrop().into(img);
 
         name.setText(toTitleCase(getItem(position).getTitle()));
+        name.setTypeface(font_name);
 
         return view;
     }

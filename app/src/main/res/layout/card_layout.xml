@@ -10,24 +10,18 @@
     card_view:cardElevation="11dp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="400dp"
         android:background="@color/polaroide"
         >
 
-        <FrameLayout
+
+        <ImageView
+            android:id="@+id/img"
             android:layout_width="match_parent"
-            android:layout_height="360dp"
+            android:layout_height="310dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="#ffffff">
-
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="match_parent"
-                android:layout_height="310dp"
-                />
-        </FrameLayout>
+            android:layout_marginRight="10dp" />
 
 
         <TextView
@@ -35,12 +29,10 @@
             android:id="@+id/name"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:textSize="30sp"
-            android:textColor="@color/back"
+            android:textSize="32sp"
+            android:textColor="@color/black"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"/>
-
-
 
     </RelativeLayout>
 
