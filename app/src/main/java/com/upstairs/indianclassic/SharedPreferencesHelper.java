@@ -11,6 +11,7 @@ public class SharedPreferencesHelper {
     public static final String SHARED_PREFERENCES_KEY = "IndianGamesFlags";
     public static final String DB_READY_KEY = "db_ready";
     public static final boolean DEFAULT_BOOL = false;
+    public static final String FIRST_TIME = "first_time";
 
 
     public static boolean checkFlag(String key, Context appContext){

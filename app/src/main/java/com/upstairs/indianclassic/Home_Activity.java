@@ -1,6 +1,7 @@
 package com.upstairs.indianclassic;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -68,7 +69,12 @@ public class Home_Activity extends AppCompatActivity
         title = (TextView) findViewById(R.id.title);
         ImageButton searchButton = (ImageButton) findViewById(R.id.searchButton);
         final FrameLayout tutorial = (FrameLayout) findViewById(R.id.tutorial);
+        if (!SharedPreferencesHelper.checkFlag(SharedPreferencesHelper.FIRST_TIME,getApplicationContext())){
+            //ON FIRST TIME USE FLAG SHOULD BE FALSE. SET IT TO TRUE IMMEDIATELY.
+            tutorial.setVisibility(View.VISIBLE);
+            SharedPreferencesHelper.setFlag(SharedPreferencesHelper.FIRST_TIME,getApplicationContext(),true);
 
+        }
         assert tutorial!=null;
         tutorial.setOnClickListener(new View.OnClickListener() {
             @Override
