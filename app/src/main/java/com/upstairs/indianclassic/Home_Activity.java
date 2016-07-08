@@ -22,9 +22,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.nirhart.parallaxscroll.views.ParallaxListView;
 
 import java.util.ArrayList;
@@ -39,7 +44,7 @@ public class Home_Activity extends AppCompatActivity
 
     private List<Card> cardList;
     TextView title;
-
+    InterstitialAd mInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +67,15 @@ public class Home_Activity extends AppCompatActivity
 
         title = (TextView) findViewById(R.id.title);
         ImageButton searchButton = (ImageButton) findViewById(R.id.searchButton);
+        final FrameLayout tutorial = (FrameLayout) findViewById(R.id.tutorial);
+
+        assert tutorial!=null;
+        tutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tutorial.setVisibility(View.GONE);
+            }
+        });
 
         cardList = getCardsFromDb();
 
@@ -81,6 +95,33 @@ public class Home_Activity extends AppCompatActivity
             }
         });
 
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("86a5cea36f538f181fed6bb096a637094253b883c03c7aa4571178bf649676af")
+                .build();
+        mAdView.loadAd(adRequest);
+
+        //loading Ad
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        requestNewInterstitial();
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                finish();
+            }
+        });
+
+
+    }
+
+    private void requestNewInterstitial() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("86a5cea36f538f181fed6bb096a637094253b883c03c7aa4571178bf649676af")
+                .build();
+
+        mInterstitialAd.loadAd(adRequest);
     }
 
 
@@ -182,9 +223,12 @@ public class Home_Activity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+        } else if(mInterstitialAd.isLoaded()){
+            mInterstitialAd.show();
+        } else{
+            finish();
         }
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
