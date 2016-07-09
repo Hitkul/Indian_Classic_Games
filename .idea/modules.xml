@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IndianClassic.iml" filepath="$PROJECT_DIR$/IndianClassic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Indian_Classic_Games_new.iml" filepath="$PROJECT_DIR$/Indian_Classic_Games_new.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Indian_Classic_Games.iml" filepath="$PROJECT_DIR$/Indian_Classic_Games.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
